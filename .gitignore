@@ -1,0 +1,14 @@
+# personal files
+personal Readme.md
+clean.sh
+
+
+# auto generated files
+*.pyc
+__pycache__/
+._*
+.DS_Store
+
+# virtual environments
+.venv/
+venv/
