@@ -1,0 +1,15 @@
+html{
+    font-size: 16px;
+}
+
+body{
+    background-color: #ffffff;
+    margin : 0px; 
+    padding: 0px;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+.uniform_spacing{
+    margin : 20px 44px;
+}
