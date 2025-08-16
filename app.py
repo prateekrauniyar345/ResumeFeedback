@@ -16,7 +16,7 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 @app.route('/', methods=['GET'])
 def main():
-    return render_template('dashboard/root.html')
+    return render_template('dashboard/home.html')
 
 
 @app.route('/login', methods=['POST'])

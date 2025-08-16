@@ -1,0 +1,67 @@
+{% extends "dashboard/root.html" %}
+
+{% block title %}Home - Resume Feedback{% endblock %}
+
+{% block content %}
+<section class="hero side_spacing py-5 px-2">
+  <div class="row align-items-center g-5">
+
+    <!-- Left: copy -->
+    <div class="col-12 col-lg-6">
+
+      <!-- Trust badge -->
+      <div class="d-inline-flex align-items-center gap-2 badge-flag mb-3">
+        <span class="small text-uppercase fw-semibold">The <span class="text-primary">#1</span> Resume Builder</span>
+      </div>
+
+      <!-- Big headline -->
+      <h1 class="hero-title fw-bold mb-3">
+        Create an Impressive<br class="d-none d-md-block" />
+        Resume for your
+        <span class="gradient-text">DREAM JOB</span><span class="hero-caret">|</span>
+      </h1>
+
+      <!-- Subtext -->
+      <p class="text-secondary hero-subtext mb-4">
+        Use our professional online resume builder to craft a resume that gets you hired.
+        Take the guesswork out of your resume.
+      </p>
+
+      <!-- CTA -->
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <a href="{{ url_for('login') }}" class="btn btn-brand btn-lg rounded-pill px-4 shadow-sm">
+          Build My Resume
+        </a>
+        <div class="d-flex align-items-center text-secondary small">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" class="me-2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"
+                  fill="currentColor" />
+          </svg>
+          200K+ people hired
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: visual -->
+    <div class="col-12 col-lg-6">
+      <div class="position-relative hero-visual mx-auto">
+        <img
+          src="{{ url_for('static', filename='images/image.svg') }}"
+          class="img-fluid rounded-4 shadow-sm"
+          alt="Resume preview mockup"
+        />
+
+        <!-- Floating stat card -->
+        <div class="card floating-card border-0 shadow-sm position-absolute">
+          <div class="card-body py-3 px-3">
+            <div class="h4 mb-0">200K+</div>
+            <div class="text-secondary small">People get hired</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
