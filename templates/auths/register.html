@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <title>Login</title>
+</head>
+<body class="min-vh-100 d-flex align-items-center justify-content-center bg-light">
+
+  <!-- Centered wrapper -->
+  <div class="container" style="max-width: 1000px;">
+    <div class="row g-0 border rounded-4 overflow-hidden shadow-sm">
+
+      <!-- Left: form -->
+      <div class="col-12 col-md-6 p-4 bg-white">
+        <h1 class="h3 mb-4">Sign Up</h1>
+
+        <form method="POST">
+
+          <div class="mb-3">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="current-password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mb-3">Sign Up</button>
+          <a href="/login" class="btn btn-primary w-100">Sign In Instead?</a>
+        </form>
+      </div>
+
+      <!-- Right: image -->
+      <div class="col-12 col-md-6" style="background-color: #ffff; border-left : 1px solid #E5E5E5;">
+        <img
+          src="{{ url_for('static', filename='images/login.png') }}"
+          alt="Welcome back"
+          class="w-100 h-100 object-fit-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

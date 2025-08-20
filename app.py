@@ -19,9 +19,13 @@ def main():
     return render_template('dashboard/home.html')
 
 
-@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    return render_template('auths/login.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    return render_template('auths/register.html')
 
 
 
