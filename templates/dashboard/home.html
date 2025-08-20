@@ -3,7 +3,11 @@
 {% block title %}Home - Resume Feedback{% endblock %}
 
 {% block content %}
-<section class="hero container py-5 px-2">
+<!-- first section -->
+<section 
+  class="hero uniform_spacing py-5"
+  style="padding: 0px 80px; border : 1px solid #E5E5E5; border-radius: 12px; background-color: #f5f7f9;"
+>
   <div class="row align-items-center g-5">
 
     <!-- Left: copy -->
@@ -40,23 +44,76 @@
 
     <!-- Right: visual -->
     <div class="col-12 col-lg-6">
-      <div class="position-relative hero-visual mx-auto">
-        <img
-          src="{{ url_for('static', filename='images/image.svg') }}"
-          class="img-fluid rounded-4 shadow-sm"
-          alt="Resume preview mockup"
-        />
+      <div class="container">
+        <div class="position-relative hero-visual mx-auto">
+          <img
+            src="{{ url_for('static', filename='images/image.svg') }}"
+            class="img-fluid rounded-4 shadow-sm"
+            alt="Resume preview mockup"
+          />
 
-        <!-- Floating stat card -->
-        <div class="card floating-card border-0 shadow-sm position-absolute">
-          <div class="card-body py-3 px-3">
-            <div class="h4" style="color: #0096FF;">Dream Job<span>&nbsp;</span> <span><i class="fas fa-circle-check"></i></span></div>
-            <div class="small text-secondary"><span>My favourite company</span></div>
+          <!-- Floating stat card -->
+          <div class="card floating-card0 border-0 shadow-sm position-absolute">
+            <div class="card-body py-3 px-3">
+              <div class="h4" style="color: #0096FF;">Dream Job<span>&nbsp;</span> <span><i class="fas fa-circle-check"></i></span></div>
+              <div class="small text-secondary"><span>My favourite company</span></div>
+            </div>
+          </div>
+
+          <div class="card floating-card1 border-0 shadow-sm position-absolute">
+            <div class="card-body py-3 px-3 ">
+              <div class="h5" style="color: #0096FF;">Dream Salary<span>&nbsp;</span> <span><i class="fas fa-circle-check"></i></span></div>
+              <div class="small text-secondary"><span>$100, 000</span></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- second section -->
+<!-- SECOND SECTION ONLY (no header) -->
+<section class="promo" aria-label="Job-ready resume promo">
+  <div class="promo__shell">
+    <!-- Top: white media panel -->
+    <div class="promo__media">
+      <div class="promo__media-box">
+        <img
+          src="{{ url_for('static', filename='images/stats.png') }}"
+          alt="Resume previews and stats"
+          class="promo__media-img"
+        />
+      </div>
+    </div>
+
+    <!-- Bottom: dark gradient content -->
+    <div class="promo__content py-5">
+      <div class="container">
+        <div class="row align-items-center gy-5 py-5">
+          <div class="col-12 col-lg-8">
+            <span class="chip">
+              The <span class="chip__primary">#1</span> Resume Builder
+            </span>
+            <h2 class="promo__title">
+              Create a Job-Ready<br class="d-none d-md-block" />
+              Resume in Minutes
+            </h2>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <p class="promo__sub">
+              Create your resume easily with our free builder and professional templates.
+            </p>
+            <a href="{{ url_for('login') }}" class="btn btn-brand btn-lg rounded-pill">
+              Build My Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
