@@ -28,10 +28,21 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
-
-        print("response for login:", email, password)
+        response = supabase.auth.sign_in_with_password({
+            "email": email,
+            "password": password
+        })
+        if response.user:
+            session["user_id"] = response.user.id
+            session["email"]   = response.user.email  # optional
+            flash("Login successful!", "success")
+            return redirect(url_for('dashboard'))
+        else:
+            flash("Login failed. Please check your credentials.", "danger")
 
     return render_template('auths/login.html')
+
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -40,8 +51,7 @@ def register():
         last_name = request.form.get('last_name')
         email = request.form.get('email')
         password = request.form.get('password')
-
-        print("response for register:", first_name, last_name, email, password)
+       
         # inserting the user into the database
         try : 
             response = supabase.auth.sign_up({
@@ -49,7 +59,8 @@ def register():
                 "password": password
             })
             flash("Registration successful! Please check your email to confirm your account.", "success")
-            session['user'] = response.user
+            session["user_id"] = response.user.id
+            session["email"]   = response.user.email  # optional
             return redirect(url_for('login'))
         except Exception as e:
             flash("An error occurred during registration. Please try again.", "danger")
@@ -58,8 +69,11 @@ def register():
     return render_template('auths/register.html')
 
 
-response = supabase.auth.get_user()
-print("response for get_user:", response)
+
+@app.route('/dashboard', methods=['GET'])
+def dashboard():
+    return render_template('dashboard/dashboard.html')
+
 
 
 if __name__ == '__main__':

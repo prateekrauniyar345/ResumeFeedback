@@ -68,6 +68,20 @@
 
     </div>
   </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const pwdField = document.getElementById('password');
+      
+      pwdField.addEventListener('input', ()=>{
+        if(pwdField.value.length < 6){
+          pwdField.style.borderColor = 'red';
+        } else {
+          pwdField.style.borderColor = '';
+        }
+      })
+    });
+  </script>
 
 </body>
 </html>
